@@ -6,7 +6,7 @@ import '../providers/auth.dart';
 import 'package:provider/provider.dart';
 import 'package:quickalert/quickalert.dart';
 import '../helpers/ProtectedRoute.dart';
-import './AuthenticationSinUp.dart';
+
 import 'Authentication.dart';
 
 class AuthenticationSignUp extends StatefulWidget {
@@ -28,7 +28,7 @@ class _AuthenticationState extends State<AuthenticationSignUp> {
     QuickAlert.show(
         context: context,
         type: QuickAlertType.error,
-        title: 'Login Failed',
+        title: 'SignUp Failed',
         titleColor: AppColor.iceWhite,
         text: errorMessage,
         textColor: AppColor.iceWhite,
@@ -195,7 +195,7 @@ class _AuthenticationState extends State<AuthenticationSignUp> {
                           ),
                         ),
                         SizedBox(
-                          width: 30,
+                          height: 20,
                         ),
                         TextField(
                           controller: _passwordCoController,

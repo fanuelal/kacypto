@@ -3,20 +3,27 @@ import 'package:google_fonts/google_fonts.dart';
 import '../Styles/theme.dart';
 
 class TrandingCrypto extends StatelessWidget {
-  final String url;
+  final String imageUrl;
   final String cryptoName;
-  final String Usdprice;
-  final String Ethprice;
+  String Usdprice;
+  String Ethprice;
 
-  const TrandingCrypto(
-      {required this.url,
+  TrandingCrypto(
+      {required this.imageUrl,
       required this.cryptoName,
       required this.Usdprice,
       required this.Ethprice});
+  String _shortPrice(String str) {
+    if (str.length > 8) {
+      return str.substring(0, 7);
+    }
+    return str;
+  }
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+
     return Container(
       height: size.height * 0.1,
       padding: EdgeInsets.symmetric(horizontal: 15),
@@ -32,7 +39,7 @@ class TrandingCrypto extends StatelessWidget {
                 child: ListTile(
                   leading: CircleAvatar(
                     backgroundColor: Colors.white,
-                    backgroundImage: NetworkImage(url),
+                    backgroundImage: NetworkImage(imageUrl),
                   ),
                   title: Text(
                     cryptoName,
@@ -48,13 +55,15 @@ class TrandingCrypto extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("\$ $Usdprice",
+                        Text("\$ ${_shortPrice(Usdprice)}",
+                            overflow: TextOverflow.visible,
                             style: GoogleFonts.sora(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
                               color: AppColor.firstDarkColor,
                             )),
-                        Text("\$ $Ethprice",
+                        Text("\$ ${_shortPrice(Ethprice)}",
+                            overflow: TextOverflow.visible,
                             style: GoogleFonts.sora(
                               color: AppColor.firstDarkColor,
                               fontSize: 10,

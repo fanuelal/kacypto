@@ -39,6 +39,7 @@ class Drawerpage extends StatelessWidget {
             DrawerMenu("My wallet", Icons.wallet),
             DrawerMenu("History", Icons.history),
             DrawerMenu("Active sell", Icons.monetization_on),
+            DrawerMenu("Diposit", Icons.download),
             Divider(),
             SizedBox(
               height: 20,

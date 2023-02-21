@@ -1,3 +1,4 @@
+import '../screens/userInfoaddScreen.dart';
 import 'package:flutter/material.dart';
 import '../Styles/theme.dart';
 import '../widgets/drawer.dart';
@@ -74,9 +75,13 @@ class ProfileScreen extends StatelessWidget {
                     alignment: Alignment.center,
                     margin: EdgeInsets.symmetric(vertical: 80, horizontal: 70),
                     child: IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => UserInfoAdd()));
+                        },
                         icon: Icon(
                           Icons.edit_outlined,
+                          size: 30,
                           color: AppColor.white,
                         )),
                   )

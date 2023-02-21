@@ -1,3 +1,4 @@
+import '../widgets/qr_code_scanner.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../Styles/theme.dart';
@@ -164,7 +165,10 @@ class SendView extends StatelessWidget {
                       ),
                     ],
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => QRView()));
+                  },
                 ),
               ),
             ),

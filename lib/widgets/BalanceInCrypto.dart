@@ -4,8 +4,9 @@ import 'package:google_fonts/google_fonts.dart';
 
 class BalanceCard extends StatelessWidget {
   final String url;
+  final String symbol;
+  BalanceCard({required this.url, required this.symbol});
 
-  const BalanceCard({required this.url});
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -36,10 +37,10 @@ class BalanceCard extends StatelessWidget {
                     SizedBox(
                       width: 15,
                     ),
-                    Text("BTC",
+                    Text(symbol,
                         style: GoogleFonts.sora(
                             color: AppColor.firstDarkColor,
-                            fontSize: 20,
+                            fontSize: 15,
                             fontWeight: FontWeight.bold)),
                   ],
                 ),

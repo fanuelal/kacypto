@@ -4,8 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:http/http.dart' as http;
 import '../helpers/http_exception.dart';
-import '../screens/PinScreen.dart';
-import '../screens/bottomNavBar.dart';
+
 
 class Auth with ChangeNotifier {
   late String _token = "";
@@ -113,24 +112,4 @@ class Auth with ChangeNotifier {
   //   //   return true;
   // }
 
-  // Future<void> Logout() async {
-  //   _token = null;
-  //   _expiryDate = null;
-  //   _userId = null;
-  //   if (_autoTimer != null) {
-  //     _autoTimer.cancel();
-  //     _autoTimer = null;
-  //   }
-  //   notifyListeners();
-  //   // final prefs = await SharedPreferences.getInstance();
-  //   // prefs.remove('userData');
-  // }
-
-  // void autoLoagout() {
-  //   if (_autoTimer != null) {
-  //     _autoTimer.cancel();
-  //   }
-  //   final timeInSec = _expiryDate.difference(DateTime.now()).inSeconds;
-  //   _autoTimer = Timer(Duration(seconds: timeInSec), Logout);
-  // }
 }

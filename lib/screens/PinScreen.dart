@@ -16,7 +16,6 @@ class PinScreen extends StatefulWidget {
 
 class _PinScreenState extends State<PinScreen> {
   bool authenticate = false;
-  bool _isAuthenticating = false;
   @override
   void initState() {
     super.initState();

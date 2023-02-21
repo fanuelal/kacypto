@@ -101,14 +101,6 @@ class _AuthenticationState extends State<Authentication> {
                   ),
                 ),
 
-                // Container(
-                //   margin: EdgeInsets.symmetric(horizontal: 5, vertical: 50),
-                //   child: Image.asset(
-                //       fit: BoxFit.cover,
-                //       height: size.height * 0.45,
-                //       width: size.width,
-                //       "assets/images/login2.webp"),
-                // ),
                 Lottie.asset(
                   "assets/lottie/cryptoCity.json",
                   height: size.height * 0.5,
@@ -116,10 +108,10 @@ class _AuthenticationState extends State<Authentication> {
                   fit: BoxFit.cover,
                   animate: true,
                   repeat: true,
-                  //     controller: _controller, onLoaded: (composition) {
-                  //   _controller.duration = Duration(seconds: 10);
-                  //   _controller.forward();
-                  //   _controller.repeat();
+                      // controller: _controller, onLoaded: (composition) {
+                    // _controller.duration = Duration(seconds: 10);
+                    // _controller.forward();
+                    // _controller.repeat();
                   // },
                 ),
               ]),
