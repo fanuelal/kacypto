@@ -1,4 +1,4 @@
-#Kacypto - Crypto Wallet with Flutter
+# Kacypto - Crypto Wallet with Flutter
 Kacypto is a mobile application that offers users a convenient and secure way to manage their cryptocurrency transactions. With its user-friendly interface and comprehensive set of features, Kacypto allows users to easily buy, sell, and store various cryptocurrencies, including Bitcoin, Ethereum, and many others.
 
 One of the key features of Kacypto is its direct bank deposit and withdraw functionality, which enables users to easily transfer funds between their bank accounts and their Kacypto wallet. This feature makes it simple and easy for users to manage their finances and stay on top of their cryptocurrency investments.
