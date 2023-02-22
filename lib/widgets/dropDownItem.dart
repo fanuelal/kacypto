@@ -3,7 +3,11 @@ import 'package:flutter/material.dart';
 import '../Styles/theme.dart';
 
 class DropDownCustomItem extends StatelessWidget {
-  const DropDownCustomItem({super.key});
+  final String image;
+  final String name;
+
+  const DropDownCustomItem({super.key, required this.image, required this.name});
+ 
 
   @override
   Widget build(BuildContext context) {
@@ -13,11 +17,11 @@ class DropDownCustomItem extends StatelessWidget {
           CircleAvatar(
             radius: 15,
             backgroundImage: NetworkImage(
-                "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/1200px-Bitcoin.svg.png"),
+                image),
           ),
           SizedBox(width: 10),
           Text(
-            "Bitcoin",
+            name,
             style: TextStyle(color: AppColor.iceWhite),
           ),
         ],

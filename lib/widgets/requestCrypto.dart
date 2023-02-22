@@ -1,7 +1,12 @@
 import 'package:casypto/widgets/dropDownItem.dart';
+import 'package:provider/provider.dart';
+import 'package:qr_flutter/qr_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../Styles/theme.dart';
+import '../providers/auth.dart';
+import 'package:provider/provider.dart';
+import '../providers/cryptoProvider.dart';
 
 class RequestView extends StatelessWidget {
   const RequestView({super.key});
@@ -9,6 +14,9 @@ class RequestView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    final auth = Provider.of<Auth>(context);
+    final coins = Provider.of<Crypto>(context).coins;
+    var Cryptoaddress = 'bc1zzwa3jp${auth.userId}';
     return Expanded(
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 35),
@@ -23,13 +31,12 @@ class RequestView extends StatelessWidget {
                 iconEnabledColor: AppColor.iceWhite,
                 onChanged: (_) {},
                 items: [
-                  DropdownMenuItem(
-                      alignment: AlignmentDirectional.center,
-                      child: DropDownCustomItem()),
-                  // DropdownMenuItem(child: DropDownCustomItem()),
-                  // DropdownMenuItem(child: DropDownCustomItem()),
-                  // DropdownMenuItem(child: DropDownCustomItem()),
-                ],
+                      DropdownMenuItem(
+                        alignment: AlignmentDirectional.center,
+                        child: DropDownCustomItem(
+                            image: coins[0].image, name: coins[0].name),
+                      ),
+                    ],
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: AppColor.iceWhite),
@@ -51,7 +58,7 @@ class RequestView extends StatelessWidget {
                   enabled: false,
                   decoration: InputDecoration(
                     label: Text(
-                      "bc1zzwa3jp4jq8j428aaqvqk8p9yxxylqnseawjg3",
+                      "bc1zzwa3jp${auth.userId}",
                       style: TextStyle(color: AppColor.white, fontSize: 13),
                     ),
                     disabledBorder: OutlineInputBorder(
@@ -76,8 +83,9 @@ class RequestView extends StatelessWidget {
                       color: AppColor.iceWhite,
                     ),
                     onPressed: () async {
+                      
                       await Clipboard.setData(ClipboardData(
-                          text: "bc1zzwa3jp4jq8j428aaqvqk8p9yxxylqnseawjg3"));
+                          text: Cryptoaddress));
                       SnackBar copied = SnackBar(
                           margin: EdgeInsets.symmetric(horizontal: 20),
                           content: Text("Address Copied"));
@@ -117,9 +125,13 @@ class RequestView extends StatelessWidget {
                 maxScale: 2,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(15.0),
-                  child: Image.network(
-                    "https://www.bitcoinqrcodemaker.com/qr_code_example_bitcoin.png",
-                    fit: BoxFit.cover,
+                  child: Container(
+                    color: AppColor.iceWhite,
+                    child: QrImage(
+                      data: Cryptoaddress,
+                      version: QrVersions.auto,
+                      size: 200.0,
+                    ),
                   ),
                 ),
               ),

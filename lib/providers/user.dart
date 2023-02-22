@@ -55,8 +55,6 @@ class UserProvider with ChangeNotifier {
       notifyListeners();
       return false;
     }
-    Future<void> userFetch() async {
-      final user;
-    }
+
   }
 }

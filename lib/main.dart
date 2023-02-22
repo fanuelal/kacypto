@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
           routes: {
             HomeScreen.routeName: (context) => HomeScreen(),
             CustomBottomNavBar.routeName: (context) => CustomBottomNavBar(),
-            Authentication.routeName: (context) => Authentication()
+            Authentication.routeName: (context)  => Authentication()
           },
         );
       },

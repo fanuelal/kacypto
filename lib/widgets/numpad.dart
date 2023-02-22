@@ -46,7 +46,7 @@ class NumPad extends StatelessWidget {
         localAuth.pinInserted(number);
         if (localAuth.isFull()) {
           if (localAuth.isCorrectPin()) {
-            Navigator.of(context).pushReplacementNamed(Authentication.routeName);
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => Authentication()));
           } else {
             _buildPopupDialog(context);
           }

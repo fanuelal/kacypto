@@ -59,9 +59,11 @@ class _UserInfoAddState extends State<UserInfoAdd> {
         textColor: AppColor.iceWhite,
         confirmBtnColor: AppColor.purple,
         confirmBtnText: 'OK',
-        onConfirmBtnTap: () => Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => ProfileScreen())
-        ),
+        onConfirmBtnTap: () {
+          Navigator.of(context).pushReplacement(
+              MaterialPageRoute(builder: (context) => ProfileScreen()));
+          Navigator.of(context).pop();
+        },
         backgroundColor: AppColor.Darkgrey);
   }
 
